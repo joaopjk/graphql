@@ -20,6 +20,12 @@ const typeDefs = gql`
     }
 `;
 const resolvers = {
+    Usuario: {
+        salario(usuario) {
+            return usuario.salario_real
+        }
+    },
+
     Query: {
         hello: () => 'Hello world!',
         dataHoraAtual: () => new Date,
@@ -28,7 +34,7 @@ const resolvers = {
             nome: 'Joao Sousa',
             email: 'joao.sousa@email.com',
             idade: 25,
-            salario: 1000.00,
+            salario_real: 1000.00,
             vip: true
         })
     }
